@@ -7,9 +7,9 @@ class Event(models.Model):
         ('1', 'Normal'),
         ('2','Urgente'),
         ('3','Muito Urgente'),
-        ('4','Ultra Mega Hiper Urgente'),
+        ('4','Ultra Mega Hiper Urgente')
     )
-    date = models.DataField()
+    date = models.DateField()
     event = models.CharField(max_length=100)
     priority = models.CharField(max_length=1, choices=priorities_list)
 
