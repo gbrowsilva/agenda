@@ -1,0 +1,39 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% include "header.html" %}
+
+<body>
+<!-- Incluir navbar aqui -->
+<main role="main">
+    <div class="jumbotron rounded-0 text-center div-background">
+        <h1 class="display-5"> Agenda de eventos </h1>
+    </div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-4 col-md-2 offset-md-3">
+                <a href="#" data-toggle="modal" data-target="#addEvent">
+                    <img src="{% static 'new.png' %}" class="img-fluid">
+                </a><br/>
+                <h6 class="py-2"> Novo Evento </h6>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="">
+                    <img src="{% static 'hoje.png' %}" class="img-fluid">
+                </a><br/>
+                <h6 class="py-2"> Eventos de Hoje </h6>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="">
+                    <img src="{% static 'todos.png' %}" class="img-fluid">
+                </a>git<br/>
+                <h6 class="py-2"> Todos os Eventos </h6>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>
