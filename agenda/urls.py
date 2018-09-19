@@ -1,5 +1,4 @@
-
-   """Agenda URL configuration..."""
+"""Agenda URL configuration..."""
 
 from django.contrib import admin
 from django.urls import path, include

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models import Event
+from .models import Event
 from django.utils.timezone import localdate
 
 # Create your views here.
