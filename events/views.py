@@ -20,10 +20,10 @@ def index(request):
     return render(request, 'index.html', context)
 
 """ Exibe todos os eventos em uma unica página, recebe o número da página a ser visualizada via GET. """
-    def all(request):
-        page = request.GET.get('page', 1)
-        paginator = Paginator(Event.objects.all(), ITEMS_PER_PAGE)
-        total = paginator.count
+def all(request):
+    page = request.GET.get('page', 1)
+    paginator = Paginator(Event.objects.all(), ITEMS_PER_PAGE)
+    total = paginator.count
 
     try:
         events = paginator.page(page)
@@ -39,17 +39,3 @@ def index(request):
 
     return render(request,'events.html', context)
 
-""" Visualização dos eventos de um determinado dia, recebe a data em formato ano/mes/dia como parâmetro. """
-def day(request, year:int, month:int, day:int):
-    day = datetime(year, month, day)
-    events = Event.objects.filter(date='{:%Y-%m-%d}'.format(day)).order_by('-priority', 'event')
-    context = {
-        'today': localdate(),
-        'day': day,
-        'events': events,
-        'next': day + timedelta(days=1),
-        'previous': day - timedelta(days=1),
-        'priorities': Event.priorities_list,
-    }
-
-    return render(request, 'day.html', context)
