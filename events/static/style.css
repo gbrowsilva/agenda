@@ -1,8 +1,8 @@
-.div-background {
-    background-image: url('https://www.google.com.br/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwid7ffT3dTdAhWFFZAKHfwsC4EQjRx6BAgBEAU&url=https%3A%2F%2Fmetaeventos.net%2Fuserfiles%2Fimage%2FViiencontroBrasileirodeecologiaQuimica-eBeQ2011%2F&psig=AOvVaw0xqkcIi-LA5rz0PorQWyFR&ust=1537915976194845');
+.div-background{
+    background-image: url('https://internacional.estadao.com.br/blogs/olhar-sobre-o-mundo/wp-content/uploads/sites/469/2010/04/BRASILIA-M.jpg');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
+    color:#fff;
     text-shadow: 0px 0px 16px #000, 0px 0px 64px #00f;
- }
+}
