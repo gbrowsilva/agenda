@@ -13,8 +13,7 @@
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Opções</h4>
                     <ul class="list-unstyled">
-                        <li><a class="text-white" href="{% url 'post_list' %}">Blog</a></li>
-                        <li><a class="text-white" href="{% url 'agenda-events-day' today.year today.month today.day %}">Eventos de hoje</a></li>
+                        <li><a class="text-white" href="{% url 'agenda-events-index' %}">Agenda de Eventos</a></li>
                         <li><a class="text-white" href="{% url 'agenda-events-all' %}">Todos eventos</a></li>
                         <li><a class="text-white" href="/admin" target="_blank">Administração</a></li>
                     </ul>
