@@ -9,4 +9,9 @@ urlpatterns = [
     path('new', views.new, name='agenda-events-new'),
     path('delete/<int:id>', views.delete, name='agenda-events-delete'),
     path('edit', views.edit, name='agenda-events-edit'),
-    ]
+
+    path('peoples', views.people_list, name='people_list'),
+    path('peoples/<int:pk>/', views.people_detail, name='people_detail'),
+    path('peoples/new/', views.people_new, name='people_new'),
+    path('peoples/<int:pk>/edit/', views.people_edit, name='people_edit'),
+ ]

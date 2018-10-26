@@ -23,6 +23,7 @@
                         {{ event.date|date:"d/m/Y" }}</a></td>
                     <td class="text-truncate">
                         <a class="text-dark" href="{% url 'agenda-events-show' event.id %}">{{ event.event }}</a>
+
                     </td>
                 </tr>
             {% endfor %}
@@ -35,6 +36,7 @@
             <p>Você tem {{ total }} evento{{ total|pluralize }} registrado{{ total|pluralize }}.</p>
             {% else %}
                 <div class="alert alert-secondary text-center">
+
                     Sem eventos cadastrados.
                 </div>
             {% endif %}

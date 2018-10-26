@@ -47,3 +47,31 @@ class Comment(models.Model):
 
     def __str__(self):
         return "{} commentou em {:%c}".format(self.author, self.commented)
+
+class Formulario(models.Model):
+
+
+    skin_list = (
+        ('0', 'Branc0'),
+        ('1', 'Amarelo'),
+        ('2', 'Pardo'),
+        ('3', 'Negro'),
+    )
+
+    gender_list = (
+        ('0', 'Masculino'),
+        ('1', 'Feminino'),
+        ('2', 'Outro'),
+    )
+
+    name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    age = models.IntegerField()
+    city = models.CharField(max_length=20)
+    nation = models.CharField(max_length=20)
+
+    skin = models.CharField(max_length=1, choices=skin_list)
+    gender = models.CharField(max_length=1, choices=gender_list)
+
+    def __str__(self):
+        return self.name

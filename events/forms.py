@@ -1,5 +1,5 @@
 from django import forms
-from .models import Event, Comment
+from .models import Event, Comment, Formulario
 
 class EventForm(forms.ModelForm):
     """Formulário utilizado para a inserção de novos eventos."""
@@ -12,3 +12,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['text', 'author', 'email', 'event']
+
+class FormularioForm(forms.ModelForm):
+
+    class Meta:
+        model = Formulario
+        fields = ['name', 'last_name', 'age', 'city', 'nation', 'skin', 'gender']

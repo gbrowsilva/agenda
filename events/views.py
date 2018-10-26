@@ -5,8 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.timezone import localdate
 from django.views.defaults import bad_request, server_error
 from .models import Event, Comment
-from .forms import EventForm, CommentForm
-
+from .forms import EventForm, CommentForm, FormularioForm
 from datetime import datetime, timedelta
 
 ITEMS_PER_PAGE = 5
@@ -129,3 +128,47 @@ def show(request, id: int):
             'today': localdate(),
     }
     return render(request, 'show.html', context)
+
+def people_new(request):
+    if request.method == "POST":
+        form = FormularioForm(request.POST)
+        if form.is_valid():
+            people = form.save(commit=True)
+            people.save()
+
+            return redirect('people_detail', pk=people.pk)
+    else:
+        form = FormularioForm()
+
+    context = {
+        'peoples': Formulario.objects.all(),
+        'form': form
+    }
+
+    return render(request, 'people_edit.html', context)
+
+def people_list(request):
+    peoples = Formulario.objects.all()
+    return render(request, 'people_list.html', {'peoples': peoples})
+
+def people_detail(request, pk):
+    people = get_object_or_404(Formulario, pk=pk)
+    return render(request, 'people_detail.html', {'people': people})
+
+def people_edit(request, pk):
+    people = get_object_or_404(Formulario, pk=pk)
+    if request.method == "POST":
+        form = FormularioForm(request.POST, instance=people)
+        if form.is_valid():
+            people = form.save(commit=False)
+            people.save()
+            return redirect('people_detail', pk=people.pk)
+    else:
+        form = FormularioForm(instance=people)
+
+    context = {
+        'peoples': Formulario.objects.all(),
+        'form': form
+    }
+
+    return render(request, 'people_edit.html', context)
