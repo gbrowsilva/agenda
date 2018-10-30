@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.timezone import localdate
 from django.views.defaults import bad_request, server_error
-from .models import Event, Comment
+from .models import Event, Comment, Formulario
 from .forms import EventForm, CommentForm, FormularioForm
 from datetime import datetime, timedelta
 
