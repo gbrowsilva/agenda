@@ -1,14 +1,20 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
+
 {% block content %}
-    {% for post in posts %}
-    <div class="post">
-        <div class="date">
-            <p>published: {{ post.publisher_date }}</p>
-                <a href="{% url 'post_edit' pk=post.pk%}">editar</a>
+        <div class="cabecario" height="80px" width="1200px" >
+            <a href="{% url 'people_new' %}" class="top-menu">Nova Pessoa</a>
+        </div>
+    {% for people in peoples %}
+        <div class="post">
+            <div class="date">
+                <p>
+                <h1><a href="{% url 'people_detail' pk=people.pk %}">{{ people.name }}</a></h1>
+                </p>
+
+                <a href="{% url 'people_edit' pk=people.pk %}">Editar</a>
+
+            </div>
 
         </div>
-        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
     {% endfor %}
 {% endblock %}
